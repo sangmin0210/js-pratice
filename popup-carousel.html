@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carousel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <style>
+        #box {
+            width: 500px;
+            height: 500px;
+            background: url('/images/Food.png');
+            box-sizing: border-box;
+            transition: 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+
+    <script>
+        var BOX = document.getElementById("box");
+        var BOX_WIDTH = 500;
+        var INDEX = 0;
+
+        var carousel = setInterval(function () {
+            if (INDEX >= 3) {
+                INDEX = 0;
+            } else {
+                INDEX++;
+            }
+            imgDistance = -BOX_WIDTH * INDEX;
+            BOX.style.backgroundPositionX = imgDistance + "px";
+             TITLE_BOX.innerText = TITLE[INDEX];
+        }, 3000);
+    </script>
+</body>
+
+</html>
